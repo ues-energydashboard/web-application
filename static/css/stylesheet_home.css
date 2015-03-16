@@ -1,0 +1,50 @@
+#visualizations {
+  font-family: Arial;
+  border: 0 none;  
+}
+.error {color: red}
+.boxed {border: 1px solid black}      
+.absolute {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  left: 600px;
+  width: 300px;
+  height: 200px;
+}
+.relative {
+  position: relative;
+  top: 0px;
+  left: 550px;
+  background-color: white;
+  width: 500px;
+}
+.overflow {
+  height: 400px;
+    }
+div.ui-datepicker{
+  font-size:12px;
+}
+/* Cambia tamaño de selectmenu widget*/      
+.ui-widget {
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 13px;
+}
+.ui-button {
+  vertical-align: top;
+}
+
+.selector {
+  color: #727476;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 500;
+  text-shadow: 2px 2px #fff;
+  text-decoration:none;
+  border-bottom: 2px solid #fff;
+  display:inline;
+}
+
+.separador {
+  padding: 5px;
+}
