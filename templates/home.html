@@ -1,0 +1,569 @@
+<!--Many Thanks to W3layouts for this template!!
+A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="es-Es" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi consumo de energía | UES</title>
+<link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="manifest.json">
+<link rel="shortcut icon" href="favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="mstile-144x144.png">
+<meta name="msapplication-config" content="browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/main-style.css" rel='stylesheet' type='text/css' />
+<link href="css/CSSTableGenerator.css" rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<!--yahoo pure -->
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-old-ie-min.css">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+<!--<![endif]-->
+<!---- start-smoth-scrolling---->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){   
+          event.preventDefault();
+          $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+      });
+    </script>
+<!---- start-smoth-scrolling---->
+<!--start-top-nav-script-->
+    <script>
+      $(function() {
+        var pull    = $('#pull');
+          menu    = $('nav ul');
+          menuHeight  = menu.height();
+        $(pull).on('click', function(e) {
+          e.preventDefault();
+          menu.slideToggle();
+        });
+        $(window).resize(function(){
+              var w = $(window).width();
+              if(w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+              }
+          });
+      });
+    </script>
+<!--End-top-nav-script-->
+<!-- Start Tamanio del navegador-->
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script>
+  $(document).ready(jqUpdateSize);    // When the page first loads
+    function jqUpdateSize(){
+      // Get the dimensions of the viewport
+      var width = $(window).width()-7;
+      var height = $(window).height()*0.57;
+      //lleno dos inputs con los tamaños de la ventana, metodo post los evia a la app.
+      $("#jqWidth").html('<input type="hidden" name="width" value="' + width + '">');
+      $('#jqHeight').html('<input type="hidden" name="height" value="' + height + '">');
+  };
+  $(window).resize(jqUpdateSize);     // When the browser changes size
+</script>
+<!-- Ends Tamanio del navegador-->
+<script type="text/javascript" src="js/modernizr.custom.53451.js"></script>
+<!--js--> 
+<script src="js/jquery.min.js"></script>
+<!--/js-->
+
+<!-- Start - Javascrip Google Char Tools -->    
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+
+  function drawChart() {
+    var data = new google.visualization.DataTable({{ datos|safe }}, 0.6);
+
+    // format the data for display in tooltips
+    var EnergyFormat = new google.visualization.NumberFormat({pattern: '#.000 kWatts-h'});
+    EnergyFormat.format(data, 1);
+    var PowerFormat = new google.visualization.NumberFormat({pattern: '#.00 kWatts'});
+    PowerFormat.format(data, 2);
+    var MoneyFormat = new google.visualization.NumberFormat({pattern: '$ #.00 Dolares'});
+    MoneyFormat.format(data, 3);
+
+    // set some common dimensions for the chart and control
+    var width = {{ grafico_width }};
+    var chartAreaWidth = '80%';
+
+    // create a chart
+    var chart = new google.visualization.ChartWrapper({
+        chartType: 'LineChart',
+        containerId: 'visualization',
+        options: {
+            height: {{ grafico_height }},
+            width: width,
+            selectionMode: 'multiple',
+            animation:{   //effects when the graph changes
+              duration: 1000,
+              easing: 'out',
+            },
+            crosshair: {  //display on selection only, display vertical hairs only
+              trigger: 'selection', 
+              orientation: 'vertical' 
+            }, 
+            curveType: 'function',  //The angles of the line will be smoothed.
+            chartArea: {
+                height: '75%',
+                width: chartAreaWidth
+            },
+            lineWidth: 3,
+            pointSize: 1,
+            series: {
+                0: {
+                    // options for Money
+                    targetAxisIndex: 2, // use hidden axis
+                    color: '#9f0d0d'                   
+                },
+                1: {
+                   // options for Power
+                    targetAxisIndex: 1, // use right axis
+                    color: '#1830e3'
+                },
+                2: {
+                    // options for Energy
+                    targetAxisIndex: 0, // use left axis
+                    color: '#5a6a23'
+                }
+            },
+            vAxes: {
+                0: {
+                    // options for second right axis
+                    title: '$ Dolares',
+                    viewWindowMode: 'pretty'                   
+                },
+                1: {
+                    // options for left axis
+                    title: 'kWatts',
+                    textPosition: 'in',
+                    viewWindowMode: 'maximized'
+                },
+                2: {
+                   // options for right axis
+                    title: 'kWatts-h',
+                    viewWindowMode: 'maximized'
+                }
+
+            }
+        }
+    });
+
+   // create a control
+    var control = new google.visualization.ControlWrapper({
+        controlType: 'ChartRangeFilter',
+        containerId: 'control',
+        options: {
+            filterColumnIndex: 0,
+            ui: {
+                chartOptions: {
+                    height: 50,
+                    width: width,
+                    chartArea: {
+                        width: chartAreaWidth
+                    }
+                },
+                chartView: {
+                    columns: [0, 2] // use the Power series in the range slider 
+                }
+            }
+        }
+    });
+
+    // create a dashboard
+    var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard'));
+    // bind control to chart
+    dashboard.bind([control], [chart]);
+    // draw the dashboard using the data table
+    dashboard.draw(data);
+  }
+google.load('visualization', '1', {packages:['controls'], callback: drawChart});
+
+</script>
+<!-- Ends - Javascrip Google Char Tools -->  
+
+<!-- Start JQueryUI script for calendar buttons, tabs and selectors -->
+
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/stylesheet_home.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<script>
+      $(function() {
+
+      $( "#initialdate" ).datepicker({showOn: "button",
+        buttonImage: "images/calendar.png",
+        buttonImageOnly: true,
+        dateFormat: 'yy-mm-dd',
+        dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
+        monthNames: [ "Enero", "Febrero", "Marzo", "Abril", 
+                      "Mayo", "Junio", "Julio", "Agosto", 
+                      "Septiembre", "Octubre", "Noviembre", 
+                      "Diciembre"],
+        minDate: new Date(2014, 10-1, 3),
+        maxDate: "0" });
+      $( "#finaldate" ).datepicker({showOn: "button", 
+        buttonImage: "images/calendar.png", 
+        buttonImageOnly: true,
+        dateFormat: 'yy-mm-dd',
+        dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
+        monthNames: [ "Enero", "Febrero", "Marzo", "Abril", 
+                      "Mayo", "Junio", "Julio", "Agosto", 
+                      "Septiembre", "Octubre", "Noviembre", 
+                      "Diciembre"],
+        minDate: new Date(2014, 10-1, 3), 
+        maxDate: "0" });
+      $( "#nombre" )
+        .selectmenu()
+        .selectmenu( "menuWidget" )
+        .addClass( "overflow" );
+      $( "#variable" ).selectmenu();
+      $( "input[type=submit]" ).button();
+    });
+    </script>
+<!-- Ends jQueryUI -->
+
+</head>
+
+<body>
+<p hidden>
+    <strong>jQuery resize: {{ grafico_width }} {{ grafico_height }}</strong>
+</p>
+  <!--start-header-->
+      <div id="home" class="header">
+          <div class="top-header">
+            <div class="container">
+              <div class="logo">
+                <a href="/"><img src="images/logo.png" alt=""></a>  
+              </div>
+            </div>
+        </div>
+      </div>
+  <!--End-header-->
+  <!-- Start - Code for the select options -->
+  <div style="margin-top: 10px;">    
+    <form id="selector" method="post">
+    <table>
+      <tr class="selector">
+        <td><select name="nombre" id="nombre">
+            {% for medidor in dropdown_medidores %}
+              {% if medidor.valor == seleccion1 %}
+                <option value="{{ medidor.valor }}" selected>{{ medidor.etiqueta }}</option>
+                {% else %}            
+                  <option value="{{ medidor.valor }}">{{ medidor.etiqueta }}</option>
+              {% endif %}
+            {% endfor %}
+            </select>
+        </td>
+        <td class="separador">DESDE</td>
+        <td><input type="hidden" id="initialdate" name="desde" value="{{ desde }}"></td>
+        <td class="separador">HASTA</td>
+        <td><input type="hidden" id="finaldate" name="hasta" value="{{ hasta }}"></td>
+        <td id="jqWidth"></td>
+        <td id="jqHeight"></td>
+        <td class="separador"><input type="submit"></td>
+      </tr>
+    </table>
+    <div class="pure-g">
+      <div class="pure-u-1">
+        <table class="CSSTableGenerator" style="margin:0px;">        
+          <thead>
+            <tr align="center">
+              <td><b>{{ periodo }}</b><span class="error">{{error}}</span></td>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+        <table class="CSSTableGenerator">
+          <tbody>
+            <tr align="center">
+              <td colspan="2">Detalles del grafico</td>
+            </tr>
+            <tr>
+              <td>Desde:</td>
+              <td>{{ info_rango_desde }}</td>
+            </tr>
+            <tr>
+              <td>Hasta:</td>
+              <td>{{ info_rango_hasta }}</td>
+            </tr>
+            <tr>
+              <td>Total energía consumida:</td>
+              <td>{{ energia_dato }}</td>              
+            </tr>
+            <tr>
+              <td>Cargo energía consumida</td>
+              <td>{{ dinero_energia }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+        <table class="CSSTableGenerator">
+          <tbody>
+            <tr align="center">
+              <td colspan="2">Tarifa aplicada</td>
+            </tr>
+            <tr>
+              <td>Energía en Punta US$/kWh:</td>
+              <td>{{ tarifa_punta }}</td>
+            </tr>
+            <tr>
+              <td>Energía en Resto US$/kWh:</td>
+              <td>{{ tarifa_resto }}</td>
+            </tr>
+            <tr>
+              <td>Energía en Valle US$/kWh:</td>          
+              <td>{{ tarifa_valle }}</td>
+            </tr>
+            <tr>
+              <td>Cargo de Distribución US$/kW-mes:</td>
+              <td>{{ tarifa_distribucion }}</td>
+            </tr>
+            <tr>
+              <td>Cargo de Comercialización S$/Usuario-mes</td>
+              <td>{{ tarifa_comercializacion }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+        <table class="CSSTableGenerator" >
+          <tbody align="center">
+            <tr>
+              <td colspan="2">Lectura</td>
+              <td>Perd por transform.</td>
+            </tr>
+            <tr>
+              <td>Consumo en Punta</td>
+              <td>{{ info_energia_punta }}</td>
+              <td>{{ perd_trafo }}</td>
+            </tr>
+            <tr>
+              <td>Consumo en Resto</td>
+              <td>{{ info_energia_resto }}</td>
+              <td>{{ perd_trafo }}</td>
+            </tr>
+            <tr>
+              <td>Consumo en Valle</td>
+              <td>{{ info_energia_valle }}</td>
+              <td>{{ perd_trafo }}</td>
+            </tr>
+            <tr>
+              <td>Demanda máxima:</td>
+              <td >{{ demanda_dato }}</td>
+              <td>{{ perd_trafo }}</td>           
+            </tr>
+            <tr>
+              <td>Factor de Potencia</td>
+              <td>{{ fp }}</td>
+              <td></td>
+            </tr>  
+          </tbody>
+        </table>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+        <table class="CSSTableGenerator">
+          <tbody>
+            <tr align="center">
+              <td colspan="2">Facturación</td>
+            </tr>
+            <tr>
+              <td>Cargo por energía en Punta</td>
+              <td>{{ dinero_punta }}</td> 
+            </tr>
+            <tr>
+              <td>Cargo por energía en Resto</td>
+              <td>{{ dinero_resto }}</td>
+            </tr>
+            <tr>
+              <td>Cargo por energía en Valle</td>
+              <td>{{ dinero_valle }}</td>
+            </tr>
+            <tr>
+              <td>Cargo de Distribución:</td>
+              <td>{{ dinero_demanda }}</td>
+            </tr>
+            <tr>
+              <td>Recargo por bajo FP</td>
+              <td>{{ recargo_fp }} </td>
+            </tr>
+            <tr>
+              <td>Cargo de Comercialización</td>
+              <td>{{ dinero_comercializacion }}</td>
+            </tr>
+            <tr>
+              <td>Subtotal</td>
+              <td>{{ sub_total }}</td> 
+            </tr>
+            <tr>
+              <td>IVA:</td>
+              <td>{{ iva }}</td>
+            </tr>
+            <tr>          
+              <td>Total:</td>
+              <td>{{ total_dinero }}</td>
+            </tr>
+          </tbody>
+        </table>           
+      </div>
+    </div>  
+    </form>
+  </div>
+  <!-- Ends Code for the select options -->
+  <!-- Starts ChartTools Tabs -->  
+  <div id="dashboard">
+    <div id="visualization"></div>
+    <div id="control"></div>
+  </div>
+  <!-- Ends ChartTools Tabs -->
+      <!--Slider-Starts-Here-->
+  <div class="slider" id="acerca">
+    <div class="slide-mask">
+    <div class="container">
+      <div class="slider-content">
+        <script src="js/responsiveslides.min.js"></script>
+       <script>
+          // You can also use "$(window).load(function() {"
+          $(function () {
+            // Slideshow 4
+            $("#slider4").responsiveSlides({
+              auto: true,
+              pager: true,
+              nav: true,
+              timeout: 9000,
+              speed: 900,
+              namespace: "callbacks",
+              before: function () {
+                $('.events').append("<li>before event fired.</li>");
+              },
+              after: function () {
+                $('.events').append("<li>after event fired.</li>");
+              }
+            });
+      
+          });
+        </script>
+      <!--End-slider-script-->
+      <!--Slideshow-4-->
+          <div  id="top" class="callbacks_container">
+            <ul class="rslides" id="slider4">
+              <li>
+                <div class="slider-top">
+                  <img src="images/coats.png" alt=""/>
+                  <h3><em>"Un gran proyecto para el monitoreo de consumo de energía eléctrica."</em></h3>
+                  <p class="below">Steve Song - Village Telco</p>
+                </div>
+              </li>
+              <li>
+                <div class="slider-top">
+                <img src="images/coats.png" alt=""/>
+                  <h3><em>"Un aporte sin precedentes en materia de consumo de energía eléctrica para la UES."</em></h3>
+                  <p class="below">Ing. Omar Duque - Desarrollador Web App</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="clearfix"> </div>
+          <!--banner-Slider-Ends-Here--> 
+      </div>
+      </div>
+      </div>
+    </div>
+  <!--Slider-Ends-Here-->
+  <!--Services Start Here -->
+    <div class="services" id="services">
+              <div class="container">
+                        <div class="services-main">
+                                      <div class="col-md-3">
+                                                <div class="services-main-left">
+                                                            <span class="left-one"> </span>
+                                                            <h3>100% ACCESO PÚBLICO</h3>
+                                                            <img src="images/line.png" alt="">
+                                                            <p>Tanto como docentes, estudiantes o trabajadores pueden
+                                                               conocer el consumo de energía eléctrica de
+                                                               la Universidad de El Salvador.</p>
+                                                </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                                <div class="services-main-left">
+                                                            <span class="left-two"> </span>
+                                                            <h3>PROYECTO DE BAJO COSTO</h3>
+                                                            <img src="images/line.png" alt="">
+                                                            <p>Desarrollado en Linux y alojado en GoogleAppEngine.
+                                                              Utilizando herramientas de software como: Google Chart Tools,
+                                                              jQueryUI, Python, C, entre otros.</p>
+                                                </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                                <div class="services-main-left">
+                                                            <span class="left-three"> </span>
+                                                            <h3>CONTINUO DESARROLLO</h3>
+                                                            <img src="images/line.png" alt="">
+                                                            <p>Se siguen desarrollando mejoras internas y agregando fantásticas
+                                                              características a esta aplicación muy util para la Universidad de El Salvador.</p>
+                                                </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                                <div class="services-main-left">
+                                                            <span class="left-four"> </span>
+                                                            <h3>UTILIZA WiFi 2.4GHz</h3>
+                                                            <img src="images/line.png" alt="">
+                                                            <p>Los medidores envían la información a través de una red inalámbrica
+                                                              WiFi a 2.4GHz no dectable por dispositivos móviles.</p>
+                                                </div>
+                                      </div>
+                                      <div class="clearfix"> </div>
+                        </div>
+              </div>
+    </div> 
+
+  <!--footer-starts-Here-->
+  <div class="footer">
+    <div class="container">
+      <div class="footer-head">
+      <div>Iconos gracias a <a href="http://www.flaticon.com/authors/freepik" title="Freepik" target="_blank">Freepik</a>, <a href="http://www.flaticon.com/authors/icon-works" title="Icon Works" target="_blank">Icon Works</a> de <a href="http://www.flaticon.com" title="Flaticon" target="_blank">www.flaticon.com</a>             con licencia de <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC BY 3.0</a><br>
+      Fotografia Polideportivo UES por <a href="http://www.panoramio.com/photo/5597227" title="panoramio.com" target="_blank">Luis Umaña</a><br>
+      Favicon gracias a <a href="http://realfavicongenerator.net/" title="RealFaviconGenerator" target="_blank">RealFaviconGenerator</a><br>
+      Template gracias a <a href="http://w3layouts.com/" title="w3layouts" target="_blank">w3layouts</a></div>
+        <p></p>
+        <p>&copy 2015-Creado por <a href="https://twitter.com/duquealas" target="_blank">Omar Duque</a></p>
+      </div>
+    </div>
+        <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+  </div>
+  <!--footer-Ends-Here-->
+</body>
+</html>
