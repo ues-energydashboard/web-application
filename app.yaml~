@@ -1,4 +1,4 @@
-application: web-application
+application: tesisduque
 version: 1
 runtime: python27
 api_version: 1
@@ -14,9 +14,9 @@ handlers:
 
 - url: /css
   static_dir: static/css
-
+  
 - url: /.*
-  script: web-application.app
+  script: tesisduque.app
 
 libraries:
 - name: jinja2
@@ -27,3 +27,5 @@ libraries:
 
 builtins:
 - remote_api: on
+- appstats: on
+
