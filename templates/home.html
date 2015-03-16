@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>UES Energy Dashboard | Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/main-style.css" rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>    
+<!---- start-smoth-scrolling---->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){   
+          event.preventDefault();
+          $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+      });
+    </script>
+<!---- start-smoth-scrolling---->
+<!--start-top-nav-script-->
+    <script>
+      $(function() {
+        var pull    = $('#pull');
+          menu    = $('nav ul');
+          menuHeight  = menu.height();
+        $(pull).on('click', function(e) {
+          e.preventDefault();
+          menu.slideToggle();
+        });
+        $(window).resize(function(){
+              var w = $(window).width();
+              if(w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+              }
+          });
+      });
+    </script>
+<!--End-top-nav-script-->
+<!-- Start Tamanio del navegador-->
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script>
+  $(document).ready(jqUpdateSize);    // When the page first loads
+    function jqUpdateSize(){
+      // Get the dimensions of the viewport
+      var width = $(window).width()-41;
+      var height = $(window).height();
+
+      $('#jqWidth').html(width);
+      $('#jqHeight').html(height);
+  };
+  $(window).resize(jqUpdateSize);     // When the browser changes size
+</script>
+<!-- Ends Tamanio del navegador-->
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<script type="text/javascript" src="js/modernizr.custom.53451.js"></script>
+<!--js--> 
+<script src="js/jquery.min.js"></script>
+<!--/js-->
+<!--gallery-->
+<script type="text/javascript" src="js/modernizr.custom.53451.js"></script>
+<script type="text/javascript" src="js/jquery.gallery.js"></script>
+<script type="text/javascript">
+    $(function() {
+    $('#dg-container').gallery({
+    autoplay  : true
+  });
+});
+</script>
+<!--/gallery-->
+
+<!-- Start - Javascrip Google Char Tools -->    
+<script type="text/javascript" src='http://www.google.com/jsapi'></script>
+<script type="text/javascript">
+  function drawChartVA() {
+    var voltaje_A = new google.visualization.AnnotatedTimeLine(document.getElementById('visualizations-1'));
+    var data = new google.visualization.DataTable({{ va|safe }}, 0.6);           
+    voltaje_A.draw(data, {scaleType: 'maximized', 'thickness': 2, allValuesSuffix: ' Voltios'});
+  }            
+  google.load('visualization', '1', {packages: ['annotatedtimeline'], callback: drawChartVA});
+
+  function drawChartVB() {
+    var annotatedtimeline = new google.visualization.AnnotatedTimeLine(document.getElementById('visualizations-2'));
+    var data = new google.visualization.DataTable({{ vb|safe }}, 0.6);           
+    annotatedtimeline.draw(data, {scaleType: 'maximized', 'thickness': 2, allValuesSuffix: ' Voltios'});
+  }
+  google.load('visualization', '1', {packages: ['annotatedtimeline'], callback: drawChartVB});
+
+  function drawChartVC() {
+    var annotatedtimeline = new google.visualization.AnnotatedTimeLine(document.getElementById('visualizations-3'));
+    var data = new google.visualization.DataTable({{ vc|safe }}, 0.6);           
+    annotatedtimeline.draw(data, {scaleType: 'maximized', 'thickness': 2, allValuesSuffix: ' Voltios'});
+  }
+  google.load('visualization', '1', {packages: ['annotatedtimeline'], callback: drawChartVC});
+
+  function drawChartIA() {
+    var annotatedtimeline = new google.visualization.AnnotatedTimeLine(document.getElementById('visualizations-4'));
+    var data = new google.visualization.DataTable({{ ia|safe }}, 0.6);           
+    annotatedtimeline.draw(data, {scaleType: 'maximized', 'thickness': 2, allValuesSuffix: ' Amperios'});
+  }
+  google.load('visualization', '1', {packages: ['annotatedtimeline'], callback: drawChartIA});
+
+  function drawChartIB() {
+    var annotatedtimeline = new google.visualization.AnnotatedTimeLine(document.getElementById('visualizations-5'));
+    var data = new google.visualization.DataTable({{ ib|safe }}, 0.6);           
+    annotatedtimeline.draw(data, {scaleType: 'maximized', 'thickness': 2, allValuesSuffix: ' Amperios'});
+  }
+  google.load('visualization', '1', {packages: ['annotatedtimeline'], callback: drawChartIB});
+
+  function drawChartIC() {
+    var annotatedtimeline = new google.visualization.AnnotatedTimeLine(document.getElementById('visualizations-6'));
+    var data = new google.visualization.DataTable({{ ic|safe }}, 0.6);           
+    annotatedtimeline.draw(data, {scaleType: 'maximized', 'thickness': 2, allValuesSuffix: ' Amperios'});
+  }
+  google.load('visualization', '1', {packages: ['annotatedtimeline'], callback: drawChartIC});
+
+  function drawChartP() {
+    var annotatedtimeline = new google.visualization.AnnotatedTimeLine(document.getElementById('visualizations-7'));
+    var data = new google.visualization.DataTable({{ potencia|safe }}, 0.6);           
+    annotatedtimeline.draw(data, {scaleType: 'maximized', 'thickness': 2, allValuesSuffix: ' Watts'});
+  }
+  google.load('visualization', '1', {packages: ['annotatedtimeline'], callback: drawChartP});
+
+  function drawChartFP() {
+    var annotatedtimeline = new google.visualization.AnnotatedTimeLine(document.getElementById('visualizations-8'));
+    var data = new google.visualization.DataTable({{ FP|safe }}, 0.6);           
+    annotatedtimeline.draw(data, {scaleType: 'maximized', 'thickness': 2, displayExactValues: false});
+  }
+  google.load('visualization', '1', {packages: ['annotatedtimeline'], callback: drawChartFP});
+
+  function drawChartIneutro() {
+    var annotatedtimeline = new google.visualization.AnnotatedTimeLine(document.getElementById('visualizations-9'));
+    var data = new google.visualization.DataTable({{ Ineutro|safe }}, 0.6);           
+    annotatedtimeline.draw(data, {scaleType: 'maximized', 'thickness': 2, allValuesSuffix: ' Amperios'});
+  }
+  google.load('visualization', '1', {packages: ['annotatedtimeline'], callback: drawChartIneutro});
+</script>
+<!-- Ends - Javascrip Google Char Tools -->  
+
+<!-- Start JQueryUI script for calendar buttons, tabs and selectors -->
+
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/stylesheet_home.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<script src="js/my_jquerycode.js"></script>
+
+<!-- Preparing data to send it to the JavaScript file " { { } } " directly in the JavaScript file also works, but this ways seems to be more elegant -->
+<meta id="jinjadata" name="tab" content="{{ tab }}">
+<!-- Ends jQueryUI -->
+
+</head>
+
+<body>
+<p hidden> {{ grafico_width }}
+    <strong>jQuery resize:</strong>
+    <span id="jqWidth" name="width">0</span>
+    <span id="jqHeight" name="height">0</span>
+</p>
+  <!--start-header-->
+      <div id="home" class="header">
+          <div class="top-header">
+            <div class="container">
+              <div class="logo">
+                <a href="/home"><img src="images/logo.png" alt=""></a>  
+              </div>
+              <!--start-top-nav-->
+               <nav class="top-nav">
+                <ul class="top-nav">                  
+                  <li><a href="#acerca" class="scroll">ACERCA DE</a></li>
+                  <li><a href="#video" class="scroll">VIDEO</a></li>
+                  <li><a href="#historia" class="scroll">HISTORIA</a></li>
+                  <li><a href="#github" class="scroll">GITHUB</a></li>
+                  <li><a href="#contacto" class="scroll">CONTACTO</a></li>
+                </ul>
+                <a href="#" id="pull"><img src="images/menu-icon.png" title="menu" /></a>
+              </nav>
+              <div class="clearfix"> </div>
+            </div>
+        </div>
+      </div>
+  <!--End-header-->
+  <!-- Start - Code for the select options -->
+  <div style="margin-top: 10px;">    
+    <form id="selector" method="post">
+    <table>
+      <tr class="selector">
+        <td ><select name="nombre" id="nombre">
+            {% for medidor in select1 %}
+              {% if medidor.valor == seleccion1 %}
+                <option value="{{ medidor.valor }}" selected>{{ medidor.etiqueta }}</option>
+                {% else %}            
+                  <option value="{{ medidor.valor }}">{{ medidor.etiqueta }}</option>
+              {% endif %}
+            {% endfor %}
+            </select></td>
+        <td class="separador"><select name="variable" id="variable">
+            {% for item in select2 %}
+              {% if item.valor in seleccion2 %}
+                <option value="{{ item.valor }}" selected>{{ item.etiqueta }}</option>
+                {% else %}             
+                  <option value="{{ item.valor }}">{{ item.etiqueta }}</option>
+              {% endif %}
+            {% endfor %}
+            </select></td>
+        <td class="separador">FECHA INICIAL</td>
+        <td><input type="hidden" id="initialdate" name="fecha_inicial" value="{{ fecha_inicial }}"></td>
+        <td class="separador">FECHA FINAL</td>
+        <td><input type="hidden" id="finaldate" name="fecha_final" value="{{ fecha_final }}"></td>
+        <td class="separador"><input type="submit"></td>
+      </tr>
+      <tr>
+        <td colspan="2"><b>{{ periodo }}</b><span class="error">{{error}}</span></td>
+      </tr>
+      <tr>
+        <td>{{ energia }}</td>
+        <td >{{ medidor }}</td>
+      </tr>
+      <tr>
+        <td >{{ demanda }}</td>
+        <td >{{ substacion }}</td>
+      </tr>         
+      </table>      
+    </form>
+  </div>
+  <!-- Ends Code for the select options -->
+  <!-- Starts jQuery Tabs -->
+  <div id="visualizations">
+    <ul>
+      <li><a href="#visualizations-1">Va</a></li>
+      <li><a href="#visualizations-2">Vb</a></li>
+      <li><a href="#visualizations-3">Vc</a></li>
+      <li><a href="#visualizations-4">Ia</a></li>
+      <li><a href="#visualizations-5">Ib</a></li>
+      <li><a href="#visualizations-6">Ic</a></li>
+      <li><a href="#visualizations-7">Potencia Trifasico</a></li>
+      <li><a href="#visualizations-8">FP</a></li>
+      <li><a href="#visualizations-9">Ineutro</a></li>
+    </ul>    
+    <div id="visualizations-1" style="width: {{ grafico_width }}px; height: 550px;"></div>   
+    <div id="visualizations-2" style="width: {{ grafico_width }}px; height: 550px;"></div> 
+    <div id="visualizations-3" style="width: {{ grafico_width }}px; height: 550px;"></div>
+    <div id="visualizations-4" style="width: {{ grafico_width }}px; height: 550px;"></div>   
+    <div id="visualizations-5" style="width: {{ grafico_width }}px; height: 550px;"></div> 
+    <div id="visualizations-6" style="width: {{ grafico_width }}px; height: 550px;"></div>
+    <div id="visualizations-7" style="width: {{ grafico_width }}px; height: 550px;"></div>   
+    <div id="visualizations-8" style="width: {{ grafico_width }}px; height: 550px;"></div> 
+    <div id="visualizations-9" style="width: {{ grafico_width }}px; height: 550px;"></div>
+  </div>
+  <!-- Ends jQuery Tabs -->
+      <!--Slider-Starts-Here-->
+  <div class="slider" id="acerca">
+    <div class="slide-mask">
+    <div class="container">
+      <div class="slider-content">
+        <script src="js/responsiveslides.min.js"></script>
+       <script>
+          // You can also use "$(window).load(function() {"
+          $(function () {
+            // Slideshow 4
+            $("#slider4").responsiveSlides({
+              auto: true,
+              pager: true,
+              nav: true,
+              timeout: 9000,
+              speed: 900,
+              namespace: "callbacks",
+              before: function () {
+                $('.events').append("<li>before event fired.</li>");
+              },
+              after: function () {
+                $('.events').append("<li>after event fired.</li>");
+              }
+            });
+      
+          });
+        </script>
+      <!--End-slider-script-->
+      <!--Slideshow-4-->
+          <div  id="top" class="callbacks_container">
+            <ul class="rslides" id="slider4">
+              <li>
+                <div class="slider-top">
+                  <img src="images/coats.png" alt=""/>
+                  <h3><em>"Un gran proyecto para el monitoreo de consumo de energia electrica."</em></h3>
+                  <p class="below">Steve Song - Village Telco</p>
+                </div>
+              </li>
+              <li>
+                <div class="slider-top">
+                <img src="images/coats.png" alt=""/>
+                  <h3><em>"Uno de los mejores trabajos de graduacion del año."</em></h3>
+                  <p class="below">Dr. Carlos Martinez - EIE-UES</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="clearfix"> </div>
+          <!--banner-Slider-Ends-Here--> 
+      </div>
+      </div>
+      </div>
+    </div>
+  <!--Slider-Ends-Here-->
+  <!--Services Start Here -->
+    <div class="services" id="services">
+              <div class="container">
+                        <div class="services-main">
+                                      <div class="col-md-3">
+                                                <div class="services-main-left">
+                                                            <span class="left-one"> </span>
+                                                            <h3>100% ACCESO PUBLICO</h3>
+                                                            <img src="images/line.png" alt="">
+                                                            <p>Tanto como docentes, estudiantes o trabajadores pueden
+                                                               conocer el consumo de energia electrica de
+                                                               la Universidad de El Salvador.</p>
+                                                </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                                <div class="services-main-left">
+                                                            <span class="left-two"> </span>
+                                                            <h3>PROYECTO DE BAJO COSTO</h3>
+                                                            <img src="images/line.png" alt="">
+                                                            <p>Creado con herramientas de software
+                                                              de uso gratuito como: GoogleAppEngine, Google Chart Tools,
+                                                              jQueryUI, Python, entre otros.</p>
+                                                </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                                <div class="services-main-left">
+                                                            <span class="left-three"> </span>
+                                                            <h3>DE LIBRE DESARROLLO</h3>
+                                                            <img src="images/line.png" alt="">
+                                                            <p>Unete a la comunidad en GiHub para seguir agregando fantasticas
+                                                              caracteristicas a esta aplicacion muy util para la UES</p>
+                                                </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                                <div class="services-main-left">
+                                                            <span class="left-four"> </span>
+                                                            <h3>UTILIZA WiFi 2.4GHz</h3>
+                                                            <img src="images/line.png" alt="">
+                                                            <p>Los medidores envían la información a través de una red inalámbrica
+                                                              WiFi a 2.4GHz no dectable por dispositivos móviles.</p>
+                                                </div>
+                                      </div>
+                                      <div class="clearfix"> </div>
+                        </div>
+              </div>
+    </div>
+  <!--Services Ends Here -->
+      <!--pop-up-box-->
+          <script type="text/javascript" src="js/modernizr.custom.53451.js"></script>  
+          <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+          <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+      <!--pop-up-box-->
+      <script>
+            $(document).ready(function() {
+            $('.popup-with-zoom-anim').magnificPopup({
+              type: 'inline',
+              fixedContentPos: false,
+              fixedBgPos: true,
+              overflowY: 'auto',
+              closeBtnInside: true,
+              preloader: false,
+              midClick: true,
+              removalDelay: 300,
+              mainClass: 'my-mfp-zoom-in'
+            });
+                                            
+            });
+        </script>   
+  </div>
+  <!--Work-Ends-Here-->
+  <!--video-start-->
+      <div class="video" id="video">
+        <div class="vdo">
+        <div class="container">
+        <!--beanner-info-->
+        <div class="banner-info text-center wow fadeIn" data-wow-delay="0.5s">
+          <h3>Nada habla mejor, que un video.</h3>
+          <img src="images/line-1.png" alt="">
+          <p>El proyecto en su etapa de desarrollo, con el objetivo de dar a conocer el trabajo y ampliar aun mas los detalles sobre el funcionamiento del sistema, se decidió crear el siguiente video.</p>
+          <h4>Ver Video</h4>
+          <a class="play-icon popup-with-zoom-anim" href="#small-dialog5"><span> </span></a><br />
+        </div>
+        <!--beanner-info-->
+        <!--video-->
+        <div id="small-dialog5" class="mfp-hide">
+          <iframe width="560" height="315" src="//www.youtube.com/embed/3u_b-a-9ijo" frameborder="0" allowfullscreen></iframe>
+        </div>
+         <script>
+            $(document).ready(function() {
+            $('.popup-with-zoom-anim').magnificPopup({
+              type: 'inline',
+              fixedContentPos: false,
+              fixedBgPos: true,
+              overflowY: 'auto',
+              closeBtnInside: true,
+              preloader: false,
+              midClick: true,
+              removalDelay: 300,
+              mainClass: 'my-mfp-zoom-in'
+            });
+                                            
+            });
+        </script>                 
+        </div>
+      <!--fea-video-->
+      </div>
+      </div>
+      <!--video-ends-->
+    <!--about-startS-->
+    <div class="about" id="historia">
+            <div class="container">
+                    <div class="about-main">
+                          <div class="col-md-6">
+                                <div class="about-left">
+                                      <a href="#"><img src="images/historia.jpg" alt=""></a>
+                                </div>
+                          </div>
+                          <div class="col-md-6">
+                                <div class="about-right">
+                                     <h3>Historia</h3>
+                                     <p class="p1">En el año 2012, como una forma de determinar cómo, cuándo y de qué manera se gastaba la energía eléctrica, la Universidad de El Salvador instaló 31 medidores.
+                                     </p>
+                                     <p class="p2">El desarrollo del proyecto se llevó a cabo a través de la realización de dos trabajos de graduación de ingeniería eléctrica, dirigidos por el Dr. Carlos Martínez, director del departamento de comunicaciones de la escuela de ingeniería eléctrica de la Universidad de El Salvador. El primer trabajo se basó en el diseño, configuración y supervisión de la red inalámbrica de medidores. Desarrollado por Juan José Bonilla. El segundo trabajo se centró en el mejoramiento del software de interrogación a la red, la utilización de un servidor de bajo costo y el desarrollo de la aplicación web. Efectuado por Omar Duque.</p>
+                                </div>
+                          </div>
+                          <div class="clearfix"> </div>
+                    </div>
+            </div>
+    </div>
+    <!--about-ends-->
+  <!--newsletter-starts-Here-->
+  <div class="newsletter" id="github">
+    <div class="newsletter-mask">
+    <div class="container">
+      <div class="newsletter-head">
+        <h3>Unete a la comunidad en GiHub para seguir con el desarrollo.</h3>
+        <div class="n-bn">
+          <a href="#">Participar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!--newsletter-Ends-Here-->
+  <!--map-starts-Here-->
+  <div class="map" id="contacto">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15503.849287038087!2d-89.200172!3d13.720731!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa5e219ba6542b720!2sEscuela+de+Ingenier%C3%ADa+El%C3%A9ctrica!5e0!3m2!1ses!2s!4v1416519464398" width="600" height="450" frameborder="0" style="border:0"></iframe>  
+    <div class="map-mask">
+    <div class="container">
+      <div class="map-main">
+          <h5>Escuela de Ingenieria Electrica, Universidad de El Salvador, Centro America</h5>
+          <p>Desarrollado por: Omar Duque.<br><a href="https://twitter.com/duquealas">Twitter: @duquealas</a></p>
+          <p>Dirigido por: Dr. Ing. Carlos Eugenio Martínez Cruz.</p>
+          <label></label>
+      </div>
+    </div>
+    </div>
+  </div>
+  <!--map-Ends-Here-->
+  <!--footer-starts-Here-->
+  <div class="footer">
+    <div class="container">
+      <div class="footer-head">
+        <!-- <p>&copy 2014-Template by <a href="http://w3layouts.com/">w3layouts</a></p> -->
+        <p>&copy 2014-Creado por <a href="https://twitter.com/duquealas">Omar Duque</a></p>
+      </div>
+    </div>
+    <script type="text/javascript">
+                  $(document).ready(function() {
+                    /*
+                    var defaults = {
+                        containerID: 'toTop', // fading element id
+                      containerHoverID: 'toTopHover', // fading element hover id
+                      scrollSpeed: 1200,
+                      easingType: 'linear' 
+                    };
+                    */
+                    
+                    $().UItoTop({ easingType: 'easeOutQuart' });
+                    
+                  });
+                </script>
+          <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+  </div>
+  <!--footer-Ends-Here-->
+</body>
+
+</html>
