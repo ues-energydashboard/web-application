@@ -19,9 +19,6 @@ template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
                                autoescape = True)
 
-
-
-
 class BlogHandler(webapp2.RequestHandler):
     def write(self, *a, **kw):
         self.response.out.write(*a, **kw)
@@ -67,7 +64,8 @@ class Agronomia(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -350,7 +348,8 @@ class AgronomiaDecanato(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -616,7 +615,8 @@ class AgronomiaGalera(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -882,7 +882,8 @@ class AgronomiaQuimica(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -1148,7 +1149,8 @@ class AuditoriumMarmol(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -1414,7 +1416,8 @@ class Cafetines(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -1680,7 +1683,8 @@ class ComedorUES(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -1946,7 +1950,8 @@ class Derecho(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -2212,7 +2217,8 @@ class Economia1(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -2478,7 +2484,8 @@ class Economia2(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -2744,7 +2751,8 @@ class Economia3(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -3010,7 +3018,8 @@ class Economia4(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -3276,7 +3285,8 @@ class Economia6(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -3542,7 +3552,8 @@ class Humanidades2(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -3809,7 +3820,8 @@ class Humanidades3(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -4075,7 +4087,8 @@ class Humanidades4(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -4341,7 +4354,8 @@ class MecanicaComplejo(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -4607,7 +4621,8 @@ class Medicina(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -4873,7 +4888,8 @@ class Odontologia1(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -5139,7 +5155,8 @@ class Odontologia2(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -5405,7 +5422,8 @@ class Odontologia3(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -5671,7 +5689,8 @@ class OdontologiaImprenta(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -5937,7 +5956,8 @@ class Periodismo(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -6203,7 +6223,8 @@ class PrimarioFIA(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -6471,7 +6492,8 @@ class Psicologia(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -6737,7 +6759,8 @@ class Quimica(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -7003,7 +7026,8 @@ class QuimicaImprenta(db.Model):
                     (datetime.date(2014,7,15), (12.974283, 0.179156, 0.182802, 0.171365, 6.263900)),
                     (datetime.date(2014,10,15),(12.974283, 0.178932, 0.183518, 0.170740, 6.263900)),
                     (datetime.date(2015,1,1),  (13.195557, 0.178932, 0.183518, 0.170740, 6.329066)),
-                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066))]
+                    (datetime.date(2015,1,15), (13.195557, 0.159446, 0.160570, 0.153326, 6.329066)),
+                    (datetime.date(2015,4,15), (13.195557, 0.127960, 0.128169, 0.128731, 6.329066))]
             
             for trimestre, tarifa in pliego:
                 if this_date >= trimestre:
@@ -7401,10 +7425,10 @@ class Home(BlogHandler):
         return self.Db_entity.filtro(desde,hasta)
 
     def get(self):        
-        desde_default=(datetime.datetime.now()-datetime.timedelta(days=7)).strftime("%Y-%m-%d")
+        desde_default=(datetime.datetime.now()-datetime.timedelta(days=7)).strftime("%d-%m-%Y %H:%M")
         #se restan 6 horas a la fecha actual debido a que se tomara la hora local del servidor de
         #appengine, que esta 6 horas adelantado.
-        fecha_hoy=(datetime.datetime.now()-datetime.timedelta(hours=6)).strftime("%Y-%m-%d")
+        fecha_hoy=(datetime.datetime.now()-datetime.timedelta(hours=6)).strftime("%d-%m-%Y %H:%M")
 
         self.render('home.html',
             dropdown_medidores=self.dropdown_medidores,
@@ -7417,12 +7441,12 @@ class Home(BlogHandler):
         self.width=self.request.get('width')
         self.height=self.request.get('height')        
         self.nombre=self.request.get('nombre')
-        self.desde=datetime.datetime.strptime(self.request.get('desde'),"%Y-%m-%d")       
-        self.hasta=datetime.datetime.strptime(self.request.get('hasta'),"%Y-%m-%d")
+        self.desde=datetime.datetime.strptime(self.request.get('desde'),"%d-%m-%Y %H:%M")       
+        self.hasta=datetime.datetime.strptime(self.request.get('hasta'),"%d-%m-%Y %H:%M")
         #agrega un dia al rango maximo porque sino habria un faltante en las horas de ese dia, pero internamente, no en el frontpage.
         self.hasta_interno=self.hasta+datetime.timedelta(days=1)
         
-        periodo="Periodo graficado desde el "+self.desde.strftime("%d %b %Y")+" al "+self.hasta.strftime("%d %b %Y")
+        periodo="Periodo graficado desde el "+self.desde.strftime("%d %b %Y %H:%M")+" al "+self.hasta.strftime("%d %b %Y %H:%M")
 
         #realiza la peticion del rango solicitado
         if self.desde > self.hasta:
@@ -7447,8 +7471,8 @@ class Home(BlogHandler):
             dropdown_medidores=self.dropdown_medidores,
             seleccion1=self.nombre,
             periodo=periodo,
-            desde=self.desde.strftime("%Y-%m-%d"),
-            hasta=self.hasta.strftime("%Y-%m-%d"),
+            desde=self.desde.strftime("%d-%m-%Y %H:%M"),
+            hasta=self.hasta.strftime("%d-%m-%Y %H:%M"),
             **json)
 
 
